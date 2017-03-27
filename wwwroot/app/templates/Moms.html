@@ -1,0 +1,24 @@
+<div class="Row">
+    <div class="span10">
+        <table class="table table-condensed table-hover" ng-controller="MomController">
+            <tr>
+                <th>BirthDate</th>
+                <th>Name</th>
+                <th>LastName</th>
+                <th>Age</th>
+                <th>IsMarried</th>
+            </tr>
+            <tr ng-repeat="Mom in Moms">
+                <td>{{Mom.birthDate}}</td>
+                <td>{{Mom.name}}</td>
+                <td>{{Mom.lastName}}</td>
+                <td>{{Mom.age}}</td>
+                <td>{{Mom.isMarried}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<label for="pattern">Input set pattern</label>
+<input type="text" ng-model="pattern">
+<label for="setter">Input set default</label>
+<input type="text" ng-model="setter">

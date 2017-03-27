@@ -1,0 +1,52 @@
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="Continer" ng-controller="RegistrationController as rc">
+    <div class="Raw">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                    <li><span class="navbar-brand">Registration</span></li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <!--<li><a href="#">{{mChilds}}</a></li>
+                    <li><a href="#">{{mMoms}}</a></li>-->
+                    <li><a href="#" ng-click="navigateTo('/#childs')">{{mChilds}}</a></li>
+                    <li><a href="#" ng-click="navigateTo('/#moms')">{{mMoms}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1>Cart example</h1>
+    <button ng-click="addRegister()">AddNew</button>
+    <div ng-repeat="item in cart">
+        <hr/>
+        <div>Prop1:<p ng-model="item.Property1"></p></div>
+        <div>Prop2:{{item.Property2}}</div>
+        <div>Prop3:{{item.Property3}}</div>
+        <button ng-click="removeRegister(cart, item)">Delete</button>
+        <button>Edit</button>
+    </div>
+
+    <div ng-view></div>
+</div>
+
+
+
+<!--@section ScriptsHead
+{
+    <script type="text/JavaScript">
+        app.factory('childsData', function(){
+        return {
+                Childs : @Html.Raw(Model.lstChilds),
+                Moms : @Html.Raw(Model.lstMoms)
+            };
+        });
+    </script>
+}-->
+

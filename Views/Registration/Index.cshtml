@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section ScriptsHead
+{
+    <script src="~/app/controllers/ChildsController.js"></script>
+    <script src="~/app/controllers/MomController.js"></script>
+    <script type="text/JavaScript">
+        app.factory('familiData', function(){
+        return {
+                Childs : @Html.Raw(Model.lstChilds),
+                Moms : @Html.Raw(Model.lstMoms)
+            };
+        });
+    </script>
+}
+<div class="Continer">
+    <div class="Raw">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                    <li><span class="navbar-brand">Registration</span></li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#Childs">Brows Childs</a></li>
+                    <li><a href="#Moms">Brows Moms</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-view></div>
+</div>
+

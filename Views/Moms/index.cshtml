@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Moms Home Page";
+}
+
+<script src="~/app/controllers/MomController.js"></script>
+<div class="Container" >
+    <div class="Row">
+        <div class= "span10">
+            <table class="table table-condensed table-hover" ng-controller="MomController"> 
+                <tr>
+                    <th>BirthDate</th>
+                    <th>Name</th>
+                    <th>LastName</th>
+                    <th>Age</th>
+                    <th>IsMarried</th>
+                </tr>
+                <tr ng-repeat="Mom in Moms">
+                    <td>{{Mom.birthDate}}</td>
+                    <td>{{Mom.name}}</td>
+                    <td>{{Mom.lastName}}</td>
+                    <td>{{Mom.age}}</td>
+                    <td>{{Mom.isMarried}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+@section ScriptsHead
+{
+    <script type="text/JavaScript">
+        app.factory('momsData', function(){
+        return {
+                Moms : @Html.Raw(Model)
+            };
+        });
+    </script>
+}
+

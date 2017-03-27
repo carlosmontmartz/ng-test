@@ -1,0 +1,7 @@
+{
+    "vsicons.presets.angular": false,
+    "files.associations": {
+        // extension name : html
+        "*.cshtml": "html"
+    }
+}
